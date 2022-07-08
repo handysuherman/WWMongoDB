@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+    background-color: gray-100;
+}
+
+td {
+    white-space:nowrap;
+    max-width: 350px;
+    overflow-y:hidden;
+ }
+ .long{
+    white-space: normal;
+    min-width: 350px;
+ }
