@@ -1,13 +1,11 @@
 const qrcode = require('qrcode-terminal');
-const puppeteerOptions = {
+require('dotenv').config();
+const { Client, LocalAuth } = require('whatsapp-web.js');
+const client = new Client({
+    authStrategy: new LocalAuth(),
     puppeteer: {
         args: ['--no-sandbox', '--disable-setuid-sandbox']
     }
-};
-require('dotenv').config();
-const { Client, LocalAuth } = require('whatsapp-web.js');
-const client = new Client(puppeteerOptions, {
-    authStrategy: new LocalAuth()
 });
 
 // Scan barcode
