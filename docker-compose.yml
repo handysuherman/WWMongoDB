@@ -1,0 +1,18 @@
+version: '3.8'
+services:
+  waFrontend:
+    image: handy195/wikan:waFrontend
+    container_name: waFront
+    restart: always
+    ports:
+       - 11200:3000
+  waBackend:
+    image: handy195/wikan:waBackend
+    container_name: waBack
+    restart: always
+    ports:
+       - 12333:8888
+  wawebjs:
+    image: handy195/wikan:wa
+    container_name: waJS
+    restart: always
