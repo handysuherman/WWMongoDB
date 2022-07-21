@@ -2,17 +2,42 @@ version: '3.8'
 services:
   waFrontend:
     image: handy195/wikan:waFrontend
+    networks:
+       - wa-netos
     container_name: waFront
     restart: always
     ports:
        - 11200:3000
   waBackend:
     image: handy195/wikan:waBackend
+    networks:
+       - wa-netos
     container_name: waBack
     restart: always
     ports:
        - 12333:8888
   wawebjs:
-    image: handy195/wikan:wa
+    image: handy195/wikan:waJS
+    networks:
+       - wa-netos
     container_name: waJS
     restart: always
+  waDBS:
+    image: mongo
+    networks:
+       - wa-netos
+    container_name: waDBS
+    restart: always
+    ports:
+       - 25443:27017
+    volumes:
+       - wamongoS:/data/db
+    environment:
+       - MONGO_INITDB_ROOT_USERNAME=mongo
+       - MONGO_INITDB_ROOT_PASSWORD=apr1awSpCOCVFmQ0rtpYEnxC9yXdaI@waDBS:27017
+networks:
+  wa-netos:
+    external: true
+volumes:
+  wamongoS:
+    driver: local

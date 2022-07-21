@@ -1,4 +1,4 @@
-# pull official base image
+#pull official base image
 FROM node:16.15.1-alpine
 
 # set the working direction

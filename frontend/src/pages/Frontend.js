@@ -18,7 +18,7 @@ const Frontend = () => {
                 async () => {
 
 
-                    const response = await fetch('http://203.142.76.236:12333/api/chats/frontend', {
+                    const response = await fetch('http://waDBS:12333/api/chats/frontend', {
                         method: 'GET',
                         headers: {
                             accept: 'application/json',
